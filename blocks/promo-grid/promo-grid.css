@@ -1,0 +1,74 @@
+.promo-grid {
+  margin: 48px 0;
+}
+
+.promo-grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.promo-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 10%);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.promo-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgb(0 0 0 / 15%);
+}
+
+.promo-card-image {
+  overflow: hidden;
+}
+
+.promo-card-image img,
+.promo-card-image picture {
+  display: block;
+  width: 100%;
+}
+
+.promo-card-image img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.promo-card-content {
+  padding: 20px;
+}
+
+.promo-card-content h3 {
+  margin: 0 0 12px;
+  font-size: 1.5rem;
+  color: #111827;
+}
+
+.promo-card-content p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.promo-card-cta {
+  margin-top: 16px;
+  display: inline-block;
+  color: #2563eb;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .promo-grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .promo-card-image img {
+    height: 200px;
+  }
+}
