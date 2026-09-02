@@ -2,7 +2,7 @@ export default async function decorate(block) {
   const jsonUrl = block.querySelector('a')?.href
     || block.textContent.trim();
 
-  const response = await fetch(`eds-ecommerce/data/${jsonUrl}`);
+  const response = await fetch(`eds-ecommerce/data${jsonUrl}`);
   const json = await response.json();
 
   const cards = json.data.map((category) => `
