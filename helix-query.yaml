@@ -26,11 +26,11 @@ indices:
         select: head > meta[name="price"]
         value: attribute(el, 'content')
 
-      longDescription:
+      longdescription:
         select: head > meta[name="longDescription"]
         value: attribute(el, 'content')
 
-      keyFeatures:
+      keyfeatures:
         select: head > meta[name="keyFeatures"]
         value: attribute(el, 'content')
 
