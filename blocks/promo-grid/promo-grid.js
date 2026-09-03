@@ -22,8 +22,9 @@ export default async function decorate(block) {
 
 
     const cards = items.map((item) => `
-  <li class="promo-card">
     
+  <li class="promo-card">
+    <a href="${item.path}" class="promo-card-link">
       <img class="promo-card-image" src="${item.image}" alt="${item.category}">
 
       <div class="promo-card-content">
@@ -33,6 +34,7 @@ export default async function decorate(block) {
         ${isProductGrid ? `<p>&dollar;${item.price}</p>` : ''}
         ${isProductGrid ? `<button class="promo-card-cta">Add to Cart</button>` : ''}
       </div>
+    </a>
     </li>
   `).join('');
 
