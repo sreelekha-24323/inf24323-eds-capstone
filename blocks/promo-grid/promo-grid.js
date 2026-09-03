@@ -7,8 +7,8 @@ export default async function decorate(block) {
 
     const isCategoryGrid = block.classList.contains('categories');
     const isProductGrid = block.classList.contains('products');
-
-    const items = json.data.filter((item) => {
+    const finalProducts=json.data.slice(0,10);
+    const items = finalProducts.filter((item) => {
         if (isCategoryGrid) {
             return item.template === 'Category';
         }
@@ -23,6 +23,7 @@ export default async function decorate(block) {
 
     const cards = items.map((item) => `
   <li class="promo-card">
+    
       <img class="promo-card-image" src="${item.image}" alt="${item.category}">
 
       <div class="promo-card-content">
