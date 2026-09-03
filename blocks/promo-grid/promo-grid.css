@@ -1,3 +1,46 @@
+.promo-grid > ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.promo-grid-card {
+    overflow: hidden;
+    border: 1px solid #dadada;
+    background-color: var(--background-color);
+}
+
+.promo-grid-card > img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.promo-grid-card-body {
+    padding: 16px;
+}
+
+.promo-grid-card-category,
+.promo-grid-card-price {
+    margin: 0 0 8px;
+    color: #666;
+    font-size: 14px;
+}
+
+.promo-grid-card h2 {
+    margin: 0 0 12px;
+    font-size: 20px;
+}
+
+.promo-grid-card-price {
+    margin-bottom: 0;
+    color: #111;
+    font-weight: 700;
+}
 .promo-grid {
     margin: 48px 0;
 }
