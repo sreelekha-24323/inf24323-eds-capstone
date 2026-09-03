@@ -1,8 +1,9 @@
-import { renderProductTeaser } from "../product-teaser/product-teaser";
+import { renderProductTeaser } from "../product-teaser/product-teaser.js";
 
 export default async function decorate(block) {
   // Read category from block
   const category = block.textContent.trim().toLowerCase();
+  console.log('Category:', category);
 
   // Fetch indexed products
   const response = await fetch('/query-index.json');
@@ -20,6 +21,8 @@ export default async function decorate(block) {
     
   );
 
+  console.log('Filtered products:', products);
+
   if (!products.length) {
     block.innerHTML = `
       <p>No products available for ${category}.</p>
@@ -30,7 +33,7 @@ export default async function decorate(block) {
   const cards = products.map(renderProductTeaser).join('');
 
   block.innerHTML = `
-    <div class="category-grid-container">
+    <div class="category-grid-list">
       ${cards}
     </div>
   `;
