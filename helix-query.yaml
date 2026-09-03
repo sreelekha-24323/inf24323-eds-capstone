@@ -17,9 +17,29 @@ indices:
       image:
         select: head > meta[property="og:image"]
         value: attribute(el, 'content')
-        
+
       template:
         select: head > meta[name="template"]
+        value: attribute(el, 'content')
+      
+      price:
+        select: head > meta[name="price"]
+        value: attribute(el, 'content')
+
+      longDescription:
+        select: head > meta[name="longDescription"]
+        value: attribute(el, 'content')
+
+      keyFeatures:
+        select: head > meta[name="keyFeatures"]
+        value: attribute(el, 'content')
+
+      specifications:
+        select: head > meta[name="specifications"]
+        value: attribute(el, 'content')
+
+      sku:
+        select: head > meta[name="sku"]
         value: attribute(el, 'content')
 sitemaps:
   default:
