@@ -41,6 +41,10 @@ indices:
       sku:
         select: head > meta[name="sku"]
         value: attribute(el, 'content')
+
+      category:
+        select: head > meta[name="category"]
+        value: attribute(el, 'content')
 sitemaps:
   default:
     source: /query-index.json
