@@ -10,11 +10,11 @@ export default async function decorate(block) {
 
     const items = json.data.filter((item) => {
         if (isCategoryGrid) {
-            return item.template === 'category';
+            return item.template === 'Category';
         }
 
         if (isProductGrid) {
-            return item.template === 'product';
+            return item.template === 'Product';
         }
 
         return false;
