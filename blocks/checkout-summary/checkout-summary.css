@@ -17,6 +17,10 @@
   margin-bottom: 24px;
 }
 
+.next-steps p {
+  margin-bottom: 16px;
+}
+
 .checkout-item {
   display: flex;
   gap: 16px;
@@ -53,8 +57,9 @@
 
 .place-order-btn {
   padding: 12px 24px;
-  background: #000;
-  color: #fff;
+  border-radius: 30px;
+  background: #ffd814;
+  color: #000;
   border: 0;
   cursor: pointer;
 }
@@ -62,4 +67,42 @@
 .checkout-empty {
   text-align: center;
   padding: 60px 20px;
+}
+
+
+
+.order-confirmation p {
+  margin-bottom: 24px;
+}
+
+.order-confirmation a.continue-shopping-btn {
+  color: #000
+}
+
+.confirmation-actions {
+  display: flex;
+  gap: 24px;
+}
+
+.continue-shopping-btn {
+  /* display: block; */
+  margin-top: 24px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 12px 24px;
+  background: #ffd814;
+  text-align: center;
+}
+
+.order-confirmation a.account-btn {
+  color: #000
+}
+
+.account-btn {
+  margin-top: 24px;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 12px 24px;
+  background: #ffa41c;
+  text-align: center;
 }

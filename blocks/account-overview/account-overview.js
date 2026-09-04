@@ -15,11 +15,11 @@ export default function decorate(block) {
       </div>
 
       <div class="account-links">
-        /account/orders
+        <a href="/eds-ecommerce/pages/account-orders">
           View Orders
         </a>
 
-        /
+        <a href="/">
           Continue Shopping
         </a>
       </div>

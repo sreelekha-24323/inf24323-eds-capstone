@@ -69,7 +69,7 @@
 }
 
 .add-to-cart-btn:hover {
-    background: #67e835;
+    background: rgb(197, 46, 46);
 }
 
 @media (max-width: 768px) {

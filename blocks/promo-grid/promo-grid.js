@@ -1,3 +1,5 @@
+import { renderProductTeaser } from '../product-teaser/product-teaser.js';
+
 export default async function decorate(block) {
     const jsonUrl = block.querySelector('a')?.href
         || block.textContent.trim();
@@ -21,7 +23,7 @@ export default async function decorate(block) {
     });
 
 
-    const cards = items.map((item) => `
+    const cards = items.map((item) =>item.template === 'Category' ? `
     
   <li class="promo-card">
     <a href="${item.path}" class="promo-card-link">
@@ -36,7 +38,7 @@ export default async function decorate(block) {
       </div>
     </a>
     </li>
-  `).join('');
+  `:renderProductTeaser(item)).join('');
 
     block.innerHTML = `
     <ul class="promo-grid-list">

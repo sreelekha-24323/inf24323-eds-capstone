@@ -30,11 +30,11 @@ export default function decorate(block) {
       <tbody>
         ${orders.map((order) => `
           <tr>
-            <td>${order.orderId}</td>
+            <td>${order.id}</td>
             <td>${order.date}</td>
             <td>${order.status}</td>
-            <td>${order.itemsCount}</td>
-            <td>$${order.total}</td>
+            <td>${order.items.length}</td>
+            <td>₹${order.total.subtotal}</td>
           </tr>
         `).join('')}
       </tbody>

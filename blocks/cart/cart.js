@@ -103,7 +103,7 @@ export default function decorate(block) {
           </div>
 
          
-          <a href="/category/all" class="continue-shopping">
+          <a href="/category/all" class="continue-shopping-btn">
             Continue Shopping
           </a>
 

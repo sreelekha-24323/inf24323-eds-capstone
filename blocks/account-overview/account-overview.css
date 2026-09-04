@@ -15,8 +15,10 @@
 }
 
 .account-links a {
+  border: 1px solid #ddd;
+  border-radius: 30px;
   padding: 12px 20px;
-  background: #000;
-  color: #fff;
+  background: #ffd814;
+  color: #000;
   text-decoration: none;
 }
