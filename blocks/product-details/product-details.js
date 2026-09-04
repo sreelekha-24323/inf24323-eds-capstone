@@ -57,7 +57,7 @@ export default async function decorate(block) {
           />
         </div>
 
-        <button class="add-to-cart-btn" onclick="addItem(product)">
+        <button class="add-to-cart-btn">
           Add To Cart
         </button>
 
@@ -65,4 +65,12 @@ export default async function decorate(block) {
 
     </div>
   `;
+
+  document
+  .querySelector('.add-to-cart-btn')
+  .addEventListener('click', () => {
+
+    addItem({...product,name:product.title});
+
+  });
 }
