@@ -107,7 +107,7 @@ export default function decorate(block) {
             Continue Shopping
           </a>
 
-          <a href="/checkout" class="checkout-btn">
+          <a href="/eds-ecommerce/pages/checkout" class="checkout-btn">
             Proceed To Checkout
           </a>
 
