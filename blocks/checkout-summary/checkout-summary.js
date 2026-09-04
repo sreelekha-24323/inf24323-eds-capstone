@@ -1,49 +1,94 @@
 import {
-  getItems,
-  getTotal,
+    getItems,
+    getTotals,
 } from '../../scripts/cart.js';
 
 export default async function decorate(block) {
-  const items = getItems();
 
-  const SHIPPING = 10;
-  const subtotal = getTotal();
-  const total = subtotal + SHIPPING;
 
-  if (!items.length) {
-    block.innerHTML = `
+    const params = new URLSearchParams(window.location.search);
+
+    const isConfirmed = params.get('status') === 'confirmed';
+
+    if (isConfirmed) {
+
+        const order = JSON.parse(localStorage.getItem('latestOrder')) || {};
+
+        block.innerHTML = `
+
+<div class="order-confirmation">
+<h1>Thank You!</h1>
+<p>
+Your order has been placed successfully.
+</p>
+<p>
+
+<strong>Order ID:</strong>
+
+${order?.id || 'N/A'}
+
+</p>
+
+ 
+
+<p>
+
+<strong>Order Total:</strong>
+ ₹${order?.total.subtotal || '0'}
+</p>
+
+<a href="/eds-ecommerce/pages/category/all" class="continue-shopping-btn">
+Continue Shopping
+
+</a>
+
+</div>
+
+`;
+
+        return;
+
+    }
+
+    const items = getItems();
+
+    const SHIPPING = 10;
+    const { subtotal } = getTotals();
+    const total = subtotal + SHIPPING;
+
+    if (!items.length) {
+        block.innerHTML = `
       <div class="checkout-empty">
         <h2>Checkout Summary</h2>
         <p>Your cart is empty.</p>
       </div>
     `;
 
-    return;
-  }
+        return;
+    }
 
-  const itemsMarkup = items.map((item) => `
+    const itemsMarkup = items.map((item) => `
     <div class="checkout-item">
-      ${item.image}
+      <img src="${item.image}" alt="${item.title}">
 
       <div class="checkout-item-details">
-        <h3>${item.title}</h3>
-
+        <h3>${item.name}</h3>
+        <p>
+          <strong>Price:</strong> ₹${item.price}
+        </p>
         <p>
           Quantity:
           ${item.quantity}
         </p>
 
-        <p>
-          $${item.price}
-        </p>
+       
       </div>
     </div>
   `).join('');
 
-  block.innerHTML = `
+    block.innerHTML = `
     <div class="checkout-summary">
 
-      <h2>Checkout Summary</h2>
 
       <section class="checkout-items-section">
         <h3>Order Items</h3>
@@ -59,17 +104,17 @@ export default async function decorate(block) {
 
         <div class="summary-row">
           <span>Subtotal</span>
-          <span>$${subtotal.toFixed(2)}</span>
+          <span>₹${subtotal}</span>
         </div>
 
         <div class="summary-row">
           <span>Shipping</span>
-          <span>$${SHIPPING.toFixed(2)}</span>
+          <span>₹${SHIPPING}</span>
         </div>
 
         <div class="summary-row total">
           <span>Total</span>
-          <span>$${total.toFixed(2)}</span>
+          <span>₹${total}</span>
         </div>
 
       </section>
@@ -89,4 +134,44 @@ export default async function decorate(block) {
 
     </div>
   `;
+
+    const placeOrderBtn = document.querySelector(
+        '.place-order-btn'
+    );
+
+    placeOrderBtn?.addEventListener('click', () => {
+        const order = {
+            id: `ORD-${Math.floor(
+                100000 + Math.random() * 900000,
+            )}`,
+            date: new Date().toISOString(),
+            items: getItems(),
+            total: getTotals(),
+        };
+
+        // save order history
+        const orders =
+            JSON.parse(localStorage.getItem('orders')) || [];
+
+        orders.push(order);
+
+        localStorage.setItem(
+            'orders',
+            JSON.stringify(orders),
+        );
+
+        // save latest order for thank you page
+        localStorage.setItem(
+            'latestOrder',
+            JSON.stringify(order),
+        );
+
+        localStorage.removeItem('eds-cart');
+
+        window.renderMiniCart?.();
+
+        window.location.href =
+            '/eds-ecommerce/pages/checkout?status=confirmed';
+    });
+    
 }
