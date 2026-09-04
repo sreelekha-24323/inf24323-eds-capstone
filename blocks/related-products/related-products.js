@@ -15,13 +15,13 @@ export default async function decorate(block) {
 
   const relatedProducts = json.data
     .filter((item) =>
-      item.type === 'product'
+      item.template.toLowerCase() === 'product'
       && item.category === currentProduct.category
       && item.path !== currentPath)
     .slice(0, 4);
 
   block.innerHTML = `
-    <div class="related-products-wrapper">
+    <div class="related-products-list">
 
       <h2>Related Products</h2>
 

@@ -1,3 +1,6 @@
+
+import { addItem } from '../../scripts/cart.js';
+
 export default async function decorate(block) {
   const sku = block.textContent.trim();
 
@@ -54,7 +57,7 @@ export default async function decorate(block) {
           />
         </div>
 
-        <button class="add-to-cart-btn">
+        <button class="add-to-cart-btn" onclick="addItem(product)">
           Add To Cart
         </button>
 
