@@ -22,7 +22,7 @@ export default async function decorate(block) {
   block.innerHTML = `
     <div class="product-details-card">
 
-      <img class="product-details-image" src="${product.image}" alt="${product.title}"/>
+      <img id="pdp-main-image" class="product-details-image" src="${product.image}" alt="${product.title}"/>
       
 
       <div class="product-details-content">

@@ -1,0 +1,25 @@
+.related-products-wrapper {
+  margin-top: 64px;
+}
+
+.related-products-heading {
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.related-products-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(280px, 1fr)
+  );
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .related-products-grid {
+    grid-template-columns: 1fr;
+  }
+}

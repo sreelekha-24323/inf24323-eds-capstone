@@ -1,71 +1,79 @@
 .product-details-card {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
 }
 
-.product-details-image img {
-  width: 100%;
-  display: block;
-  border-radius: 12px;
+.product-details-image {
+    width: 500px;
+    height: 400px;
+    display: block;
+    border-radius: 12px;
+}
+
+.product-details-content h1 {
+    font-size: 24px;
 }
 
 .product-title {
-  margin: 0 0 12px;
-  font-size: 2.5rem;
-  font-weight: 700;
+    margin: 0 0 12px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .product-price {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  font-weight: 700;
-  color: #d63384;
+    /* margin-bottom: 20px; */
+    font-size: 16px;
+    font-weight: 700;
+    /* color: #d63384; */
 }
 
 .product-description {
-  margin-bottom: 24px;
-  line-height: 1.6;
-  color: #555;
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.6;
+    color: #555;
 }
 
 .product-stock {
-  margin-bottom: 20px;
-  color: #198754;
-  font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #198754;
+    font-weight: 600;
 }
 
 .product-quantity {
-  margin-bottom: 24px;
+    margin-bottom: 24px;
+    font-size: 16px;
 }
 
 .product-quantity label {
-  display: block;
-  margin-bottom: 8px;
+    display: block;
+    margin-bottom: 8px;
 }
 
 .product-quantity input {
-  width: 80px;
-  padding: 10px;
+    width: 80px;
+    padding: 10px;
 }
 
 .add-to-cart-btn {
-  border: none;
-  border-radius: 30px;
-  padding: 14px 32px;
-  background: #7cff45;
-  color: #000;
-  font-weight: 700;
-  cursor: pointer;
+    border: none;
+    border-radius: 30px;
+    padding: 14px 32px;
+    background: brown;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
 }
 
 .add-to-cart-btn:hover {
-  background: #67e835;
+    background: #67e835;
 }
 
 @media (max-width: 768px) {
-  .product-details-wrapper {
-    grid-template-columns: 1fr;
-  }
+    .product-details-wrapper {
+        grid-template-columns: 1fr;
+    }
 }
