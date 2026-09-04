@@ -1,0 +1,41 @@
+.product-specs-list {
+  margin-top: 48px;
+}
+
+.product-specs-heading {
+  margin-bottom: 24px;
+  font-size: 2rem;
+}
+
+.product-specs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.product-specs-table tr {
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-specs-table th {
+  width: 35%;
+  padding: 16px;
+  text-align: left;
+  font-weight: 600;
+  background: #f8f9fa;
+}
+
+.product-specs-table td {
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .product-specs-table th,
+  .product-specs-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .product-specs-table th {
+    border-bottom: none;
+  }
+}
