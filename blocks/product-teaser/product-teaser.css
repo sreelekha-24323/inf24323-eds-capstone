@@ -1,6 +1,9 @@
 .product-teaser-card {
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
+  align-items:center;
+  text-align: center;
   height: 100%;
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -15,15 +18,16 @@
 }
 
 .product-teaser-card a {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
+  text-align: center;
+  padding:8px 12px;
   text-decoration: none;
-  color: inherit;
+  background: brown;
+  color:white;
 }
 
 .product-teaser-image {
-  width: 100%;
+  width: 150px;
+  height:200px;
 }
 
 .product-teaser-image picture,
@@ -41,7 +45,7 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .product-teaser-title {

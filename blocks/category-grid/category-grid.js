@@ -33,8 +33,8 @@ export default async function decorate(block) {
   const cards = products.map(renderProductTeaser).join('');
 
   block.innerHTML = `
-    <div class="category-grid-list">
+    <section class="category-grid-list" id="products">
       ${cards}
-    </div>
+    </section>
   `;
 }
