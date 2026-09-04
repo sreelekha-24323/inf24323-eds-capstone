@@ -92,7 +92,7 @@ a.checkout-btn {
 .cart-summary a.continue-shopping {
     color: #000;
 }
-.continue-shopping {
+.continue-shopping-btn {
     display: block;
     margin-top: 16px;
     border: 1px solid #ddd;
@@ -101,6 +101,7 @@ a.checkout-btn {
     color: #000;
     background: #ffd814;
     text-align: center;
+    text-decoration: none;
 
 }
 

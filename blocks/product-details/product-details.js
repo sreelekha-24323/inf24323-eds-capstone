@@ -46,16 +46,7 @@ export default async function decorate(block) {
           In Stock
         </div>
 
-        <div class="product-quantity">
-          <label for="qty">Quantity</label>
-
-          <input
-            id="qty"
-            type="number"
-            min="1"
-            value="1"
-          />
-        </div>
+        
 
         <button class="add-to-cart-btn">
           Add To Cart
@@ -71,6 +62,7 @@ export default async function decorate(block) {
   .addEventListener('click', () => {
 
     addItem({...product,name:product.title});
+    window.renderMiniCart?.();
 
   });
 }

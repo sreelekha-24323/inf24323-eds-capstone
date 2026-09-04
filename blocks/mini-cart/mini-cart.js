@@ -160,10 +160,7 @@ export default async function decorate(block) {
 
     const items = getItems();
 
-    const count = items.reduce(
-      (sum, item) => sum + (item.quantity || 1),
-      0,
-    );
+    const count = items.length;
 
     cartCount.textContent = count;
 
