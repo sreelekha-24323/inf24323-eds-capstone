@@ -1,10 +1,10 @@
 const CART_KEY = 'eds-cart';
 
-function getItems() {
+export function getItems() {
   return JSON.parse(localStorage.getItem(CART_KEY)) || [];
 }
 
-function saveItems(items) {
+export function saveItems(items) {
   localStorage.setItem(CART_KEY, JSON.stringify(items));
 }
 

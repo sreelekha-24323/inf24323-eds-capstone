@@ -2,7 +2,7 @@ export default async function decorate(block) {
     const jsonUrl = block.querySelector('a')?.href
         || block.textContent.trim();
 
-    const response = await fetch(`query-index.json`);
+    const response = await fetch(`/query-index.json`);
     const json = await response.json();
 
     const isCategoryGrid = block.classList.contains('categories');

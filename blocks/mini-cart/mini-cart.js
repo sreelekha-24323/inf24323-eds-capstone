@@ -1,11 +1,10 @@
-import { getItems, getTotals } from '../../scripts/cart.js';
+import { getTotals } from '../../scripts/cart.js';
 
 export default function decorate(block) {
   const renderCart = () => {
     const { totalItems, subtotal } = getTotals();
 
     block.innerHTML = `
-      /cart
 
         <span class="mini-cart-icon">
           🛒
