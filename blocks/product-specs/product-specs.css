@@ -4,7 +4,7 @@
 
 .product-specs-heading {
   margin-bottom: 24px;
-  font-size: 2rem;
+  font-size: 20px;
 }
 
 .product-specs-table {
@@ -22,10 +22,12 @@
   text-align: left;
   font-weight: 600;
   background: #f8f9fa;
+  font-size:16px;
 }
 
 .product-specs-table td {
   padding: 16px;
+  font-size:16px;
 }
 
 @media (max-width: 768px) {
