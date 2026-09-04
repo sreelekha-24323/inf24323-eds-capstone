@@ -1,34 +1,33 @@
 import {
-  getItems,
-  getTotals,
-  removeItem,
-  updateQty,
+    //   getItems,
+    getTotals,
+    removeItem,
+    updateQty,
+    getItems,
 } from '../../scripts/cart.js';
 
 export default function decorate(block) {
-  function render() {
-    const items = getItems();
+    function render() {
+        const items = getItems();
 
-    const { subtotal } = getTotals();
+        const { subtotal } = getTotals();
 
-    if (!items.length) {
-      block.innerHTML = `
+        if (!items.length) {
+            block.innerHTML = `
         <p>Your cart is empty.</p>
       `;
-      return;
-    }
+            return;
+        }
 
-    block.innerHTML = `
-      <div class="cart-wrapper">
+        block.innerHTML = `
+      <div class="cart-list">
 
         <div class="cart-items">
 
           ${items.map((item) => `
             <div class="cart-item">
 
-              <div class="cart-item-image">
-                ${item.image}
-              </div>
+              <img class="cart-item-image" src="${item.image}" alt="${item.name}">
 
               <div class="cart-item-details">
 
@@ -37,11 +36,11 @@ export default function decorate(block) {
                 </h3>
 
                 <p>
-                  ₹${item.price}
+                 <strong>Price:</strong> ₹${item.price}
                 </p>
 
                 <div class="cart-item-qty">
-
+                <div class="qty-controls">
                   <button
                     class="qty-decrease"
                     data-sku="${item.sku}"
@@ -49,9 +48,9 @@ export default function decorate(block) {
                     -
                   </button>
 
-                  <span>
+                  <div class="qty-value">
                     ${item.quantity}
-                  </span>
+                  </div>
 
                   <button
                     class="qty-increase"
@@ -59,6 +58,7 @@ export default function decorate(block) {
                   >
                     +
                   </button>
+                  </div>
 
                 </div>
 
@@ -67,39 +67,42 @@ export default function decorate(block) {
                   ₹${item.price * item.quantity}
                 </p>
 
-                <button
+               
+
+              </div>
+               <button
                   class="remove-item"
                   data-sku="${item.sku}"
                 >
                   Remove
                 </button>
 
-              </div>
-
             </div>
           `).join('')}
 
         </div>
 
+        <div class="cart-right-container">
         <div class="cart-summary">
 
           <h3>Order Summary</h3>
 
-          <p>
-            Subtotal:
-            ₹${subtotal}
-          </p>
+          <div class="price-summary">
+            <p>Subtotal</p>
+            <p>₹${subtotal}</p>
+          </div>
+          
+          <div class="price-summary">
+            <p>Shipping</p>
+            <p>₹99</p>
+          </div>
 
-          <p>
-            Estimated Shipping:
-            ₹99
-          </p>
+          <div class="price-summary">
+            <p>Estimated Total</p>
+            <p>₹${subtotal + 99}</p>
+          </div>
 
-          <p>
-            Estimated Total:
-            ₹${subtotal + 99}
-          </p>
-
+         
           <a href="/category/all" class="continue-shopping">
             Continue Shopping
           </a>
@@ -109,58 +112,59 @@ export default function decorate(block) {
           </a>
 
         </div>
+        </div>
 
       </div>
     `;
 
-    bindEvents();
-  }
+        bindEvents();
+    }
 
-  function bindEvents() {
-    block.querySelectorAll('.remove-item')
-      .forEach((button) => {
-        button.addEventListener('click', () => {
-          removeItem(button.dataset.sku);
-          render();
-        });
-      });
+    function bindEvents() {
+        block.querySelectorAll('.remove-item')
+            .forEach((button) => {
+                button.addEventListener('click', () => {
+                    removeItem(button.dataset.sku);
+                    render();
+                });
+            });
 
-    block.querySelectorAll('.qty-increase')
-      .forEach((button) => {
-        button.addEventListener('click', () => {
-          const sku = button.dataset.sku;
+        block.querySelectorAll('.qty-increase')
+            .forEach((button) => {
+                button.addEventListener('click', () => {
+                    const sku = button.dataset.sku;
 
-          const item = getItems().find(
-            (i) => i.sku === sku,
-          );
+                    const item = getItems().find(
+                        (i) => i.sku === sku,
+                    );
 
-          updateQty(
-            sku,
-            item.quantity + 1,
-          );
+                    updateQty(
+                        sku,
+                        item.quantity + 1,
+                    );
 
-          render();
-        });
-      });
+                    render();
+                });
+            });
 
-    block.querySelectorAll('.qty-decrease')
-      .forEach((button) => {
-        button.addEventListener('click', () => {
-          const sku = button.dataset.sku;
+        block.querySelectorAll('.qty-decrease')
+            .forEach((button) => {
+                button.addEventListener('click', () => {
+                    const sku = button.dataset.sku;
 
-          const item = getItems().find(
-            (i) => i.sku === sku,
-          );
+                    const item = getItems().find(
+                        (i) => i.sku === sku,
+                    );
 
-          updateQty(
-            sku,
-            item.quantity - 1,
-          );
+                    updateQty(
+                        sku,
+                        item.quantity - 1,
+                    );
 
-          render();
-        });
-      });
-  }
+                    render();
+                });
+            });
+    }
 
-  render();
+    render();
 }
