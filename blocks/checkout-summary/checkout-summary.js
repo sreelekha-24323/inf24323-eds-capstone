@@ -70,7 +70,7 @@ export default async function decorate(block) {
   `).join('');
 
   block.innerHTML = `
-    <div class="checkout-summary">
+    <div class="checkout-summary-details">
       <section class="checkout-items-section">
         <h3>Order Items</h3>
         <div class="checkout-items">

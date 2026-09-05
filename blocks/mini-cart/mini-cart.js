@@ -117,7 +117,7 @@ import { getItems, getTotals } from '../../scripts/cart.js';
 
 export default async function decorate(block) {
   block.innerHTML = `
-    <div class="cart-wrapper">
+    <div class="mini-cart-wrapper">
       <button class="cart-icon-btn" aria-label="Cart">
         🛒
         <span class="cart-count">0</span>

@@ -5,14 +5,14 @@
 }
 
 @media (width <= 768px) {
-  .category-grid-wrapper {
+  .category-grid-list {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
 }
 
 @media (width <= 480px) {
-  .category-grid-wrapper {
+  .category-grid-list {
     grid-template-columns: 1fr;
   }
 }

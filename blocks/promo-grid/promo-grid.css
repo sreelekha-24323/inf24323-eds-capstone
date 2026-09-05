@@ -33,7 +33,7 @@
 
 .promo-grid-card h2 {
     margin: 0 0 12px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .promo-grid-card-price {
@@ -76,8 +76,9 @@
 
 .promo-card-image {
     overflow: hidden;
-    width: 150px;
-    height: 150px;
+    width: min(100%, 150px);
+    height: auto;
+    aspect-ratio: 1;
 }
 
 .promo-card-image img,
@@ -87,7 +88,7 @@
 }
 
 .promo-card-image img {
-    height: 220px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -97,7 +98,7 @@
 
 .promo-card-content h3 {
     margin: 0 0 12px;
-    font-size: 1.5rem;
+    font-size: 18px;
     color: #111827;
 }
 
@@ -105,7 +106,7 @@
     margin: 0;
     color: #6b7280;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 14px;
 }
 
 .promo-card-cta {
@@ -122,11 +123,11 @@
 
 
 @media (max-width: 768px) {
-    .promo-grid-container {
+    .promo-grid-list {
         grid-template-columns: 1fr;
     }
 
     .promo-card-image img {
-        height: 200px;
+        height: 100%;
     }
 }

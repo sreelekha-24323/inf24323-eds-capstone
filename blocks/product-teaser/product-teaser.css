@@ -26,8 +26,9 @@
 }
 
 .product-teaser-image {
-  width: 150px;
-  height:200px;
+  width: min(100%, 150px);
+  height: auto;
+  aspect-ratio: 3 / 4;
 }
 
 .product-teaser-image picture,
@@ -37,7 +38,7 @@
 }
 
 .product-teaser-image img {
-  height: 260px;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -48,35 +49,49 @@
   /* flex-grow: 1; */
 }
 
+
+
 .product-teaser-title {
   margin: 0 0 8px;
-  font-size: 1.1rem;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .product-teaser-price {
   margin: 0 0 12px;
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 700;
-  color: #d63384;
+  /* color: #d63384; */
 }
 
 .product-teaser-description {
   margin: 0 0 16px;
   color: #6b7280;
-  font-size: 0.9rem;
+  font-size: 14px;
   line-height: 1.5;
   flex-grow: 1;
 }
 
 .product-teaser-button {
-  display: inline-block;
-  align-self: flex-start;
+  /* display: block;
+  align-self: flex-start; */
   padding: 10px 16px;
   background: #111827;
   color: #fff;
   border-radius: 6px;
-  font-size: 0.875rem;
+  font-size: 14px;
   font-weight: 500;
+}
+
+@media (max-width: 600px) {
+  .product-teaser-content {
+    padding: 12px;
+  }
+
+  .product-teaser-card a,
+  .product-teaser-button {
+    width: 100%;
+    text-align: center;
+  }
 }

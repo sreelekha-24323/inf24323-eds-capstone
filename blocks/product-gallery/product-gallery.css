@@ -11,8 +11,9 @@
 }
 
 .product-gallery-main img {
-  width: 200px;
-  height: 200px;
+  width: min(100%, 400px);
+  height: auto;
+  aspect-ratio: 1;
   display: block;
   object-fit: cover;
 }
@@ -45,4 +46,15 @@
 
 .gallery-thumb:hover {
   border-color: #999;
+}
+
+@media (max-width: 600px) {
+  .product-gallery {
+    gap: 12px;
+  }
+
+  .gallery-thumb img {
+    width: 64px;
+    height: 64px;
+  }
 }
