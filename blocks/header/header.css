@@ -1,9 +1,10 @@
 /* header and nav layout */
 header .nav-wrapper {
-  background-color: var(--background-color);
+  /* background-color: var(--background-color); */
   width: 100%;
   z-index: 2;
   position: fixed;
+  background-color: cadetblue;
 }
 
 header nav {
@@ -55,7 +56,14 @@ header nav p {
 }
 
 header nav a:any-link {
-  color: currentcolor;
+  color: white;;
+   padding:8px 12px;
+}
+
+header nav a:hover {
+  background-color: brown;
+  text-decoration: none;
+  padding:8px 12px;
 }
 
 /* hamburger */
@@ -72,11 +80,13 @@ header nav .nav-hamburger button {
   border: 0;
   border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
+  /* background-color: var(--background-color); */
+  /* color: inherit; */
   overflow: initial;
   text-overflow: initial;
   white-space: initial;
+  color:white;
+  background-color: transparent;
 }
 
 header nav .nav-hamburger-icon,

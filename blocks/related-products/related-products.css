@@ -4,19 +4,24 @@
 
 .related-products-heading {
   margin-bottom: 24px;
-  font-size: 2rem;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.2;
 }
 
 .related-products-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, 300px);
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
   gap: 24px;
 }
 
 @media (max-width: 768px) {
   .related-products-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .related-products-list {
+    margin-top: 40px;
   }
 }
