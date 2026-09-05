@@ -69,6 +69,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+a.promo-card-link:hover {
+    text-decoration: none;
+
+}
+
 .promo-card:hover {
     transform: translateY(-6px);
     box-shadow: 0 10px 24px rgb(0 0 0 / 15%);
