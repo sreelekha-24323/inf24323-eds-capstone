@@ -13,7 +13,7 @@ export default async function decorate(block) {
 
   const json = await response.json();
 
-  const product = json.data.filter(item=>item.template==='Product').find(
+  const product = json.data.filter(item => item.template === 'Product').find(
     (item) => item.sku === sku,
   );
 
@@ -58,11 +58,31 @@ export default async function decorate(block) {
   `;
 
   document
-  .querySelector('.add-to-cart-btn')
-  .addEventListener('click', () => {
+    .querySelector('.add-to-cart-btn')
+    .addEventListener('click', () => {
 
-    addItem({...product,name:product.title});
-    window.renderMiniCart?.();
+      addItem({ ...product, name: product.title });
+      window.renderMiniCart?.();
+      showToast(`${product.title} added to cart`);
 
-  });
+
+    });
+}
+
+
+function showToast(message) {
+  let toast = document.querySelector('.cart-toast');
+
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'cart-toast';
+    document.body.appendChild(toast);
+  }
+
+  toast.textContent = message;
+  toast.classList.add('show');
+
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
 }
