@@ -3,6 +3,10 @@
   padding: 0;
 }
 
+.hero-container{
+  width: 100%;
+}
+
 .hero {
   position: relative;
   padding: 40px 24px;
